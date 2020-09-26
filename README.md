@@ -2,7 +2,7 @@
 pixijs-demo
 
 ## start
-npm run server
+npm run start
 
 ## build
 npm run build

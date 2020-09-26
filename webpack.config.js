@@ -1,5 +1,7 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -20,6 +22,9 @@ module.exports = {
       chunkFilename: '[id].css',
     })
   ],
+  devServer: {
+    contentBase: path.resolve(__dirname, 'src')
+  },
   module: {
     rules: [{
       test: /\.css$/,
