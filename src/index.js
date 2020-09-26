@@ -27,8 +27,7 @@ document.body.appendChild(app.view);
 
 loader
   .add("images/treasureHunter.json")
-  // .add(imgData)
-  // .add(catImg)
+  .add('images/cat.png')
   .load(setup);
 
 //Define variables that might be used in more 
@@ -43,13 +42,15 @@ function setup() {
 
   //Make the sprites and add them to the `gameScene`
   //Create an alias for the texture atlas frame ids
-  id = resources["images/treasureHunter.json"].url;
+  id = resources["images/treasureHunter.json"].textures;
+
   //Dungeon
   dungeon = new Sprite(id["dungeon.png"]);
+
   gameScene.addChild(dungeon);
 
   //Door
-  door = new Sprite(id["door.png"]);  
+  door = new Sprite(id["door.png"]);
   door.position.set(32, 0);
   gameScene.addChild(door);
 
@@ -68,7 +69,7 @@ function setup() {
   gameScene.addChild(treasure);
 
   //Make the blobs
-  let numberOfBlobs = 6,
+  let numberOfBlobs = 9,
     spacing = 48,
     xOffset = 150,
     speed = 2,
